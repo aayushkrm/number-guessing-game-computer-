@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "CC",
+      "setup": "",
+      "run": "cc guess_a_number.c",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
