@@ -36,7 +36,7 @@ int main()
             guess = (lower + upper) / 2;
         }
     }
-print("The number you were thinking of is %d\n", guess);
+printf("The number you were thinking of is %d\n", guess);
 
 return 0;
 }
