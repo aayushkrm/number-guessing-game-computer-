@@ -1,28 +1,42 @@
 #include <stdio.h>
 
 /*
-Whot goes here? At least, how should it be?
-
-1. Human thinks about a number. Some random number.
-2. Computer asks humab questions, following bisection algorithm.
-3. Computer decides, when it is confident about the number.
-4. Computer prints its guess then.
-
-Again, in feew words: not a human, but computer should guess a number! =)
+1. Computer thinks of a number, which will be the guess.
+2. Computer asks human if their number is less than, greater than, or equal to the guess.
+3. If the guess is too low, the lower bound of the range is adjusted.
+4. If the guess is too high, the upper bound of the range is adjusted.
+5. Repeat steps 2-4 until the guess is correct.
 */
 
 int main()
 {
     int lower = 0, upper = 1024;
+    int guess = (lower + upper) / 2;
+    char response;
 
-    // here upper stands for non-inclusive bound
     printf("Think of a number between %d and %d\n", lower, upper - 1);
-    // and it sounds good then to ask user
-    // if the number is LESS than something
 
-    // guessing code here
-    // C also has while cycle if needed =)
-    // while ( condition ) { body; }
+    while (lower <= upper)
+    {
+        // Compute the midpoint
+        
+        // Ask the user if their number is less than, greater than, or equal to the guess
+        printf("Is your number less than, greater than, or equal to %d?\n", guess);
+        scanf(" %c", &response);
 
-    return 0;
+        // Adjust the range based on the user's response
+        if (response == 'y')
+        {
+            upper = guess - 1;
+            guess = (lower + upper) / 2;
+        }
+        else if (response == 'n')
+        {
+            lower = guess + 1;
+            guess = (lower + upper) / 2;
+        }
+    }
+printf("The number you were thinking of is %d\n", guess);
+
+return 0;
 }
